@@ -1,0 +1,25 @@
+*** 说明
+
+这是一个用于演示在不依赖 =Emscripten= 的情况下制作一个 =WASM= 库的例子项目.
+
+=include/mini.h=, =lib0.c=, =lib1.c=, =lib2.c= 和 =lib3.c= 就是整个项目的源代码了, 其他文件基本上都是和构建相关的文件.
+
+*** 构建
+
+会构建出一个名为 =libmini.a= 的静态库.
+
+**** WASM
+
+#+BEGIN_SRC sh
+make TARGET=WASM
+#+END_SRC
+
+**** 原生
+
+#+BEGIN_SRC sh
+make
+#+END_SRC
+
+*** 用法
+
+参考 =example= 目录.

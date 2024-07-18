@@ -1,0 +1,47 @@
+*** 说明
+
+这里面的例子主要是为了验证 =mini-wasm-lib= 能否正常工作.
+
+*** 构建
+
+总共准备了三个例子: 浏览器版本, =Node.js= 版本和原生版本.
+
+其中浏览器版本和 =Node.js= 版本的构建方式是一样的.
+
+#+begin_src sh
+  make example.wasm
+#+end_src
+
+原生版本的构建方式则是:
+
+#+begin_src sh
+  make example_native
+#+end_src
+
+*** 运行
+
+**** 浏览器版本
+
+需要自行准备一个 =HTTP= 服务器, 我们可以直接使用 =python= 的 =http= 模块来启动一个服务器:
+
+#+begin_src sh
+  python3 -m http.server
+#+end_src
+
+然后在浏览器访问 http://localhost:8080 看效果.
+
+**** Node.js 版本
+
+需要自行配置支持 =WASM= 的 =node.js= 环境, 并运行以下命令查看结果:
+
+#+begin_src sh
+  node node.js
+#+end_src
+
+**** 原生版本
+
+只要成功构建就能直接运行:
+
+#+begin_src sh
+  ./example_native
+#+end_src
